@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Classroom & Meeting Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Auth Container: Login & Sign Up -->
+    <div id="auth-container" class="card">
+        <h2>Welcome to Global Meet</h2>
+        <p>Create an account or login to start hosting meetings worldwide.</p>
+        <form id="login-form">
+            <div class="input-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" required placeholder="name@example.com">
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" required placeholder="••••••••">
+            </div>
+            <button type="submit" class="btn-primary">Sign In / Create Account</button>
+        </form>
+    </div>
+
+    <!-- Main Application Interface (Hidden until login) -->
+    <div id="app-container" class="hidden">
+        <header>
+            <h1>Global Meeting Dashboard</h1>
+            <button id="logout-btn" class="btn-secondary">Log Out</button>
+        </header>
+
+        <main class="dashboard-grid">
+            <!-- Left Panel: Meeting Controls & Invites -->
+            <section class="panel controls-panel">
+                <h3>Actions</h3>
+                <button id="start-stream-btn" class="btn-primary">Start Video / Share Screen</button>
+                
+                <hr>
+                
+                <h3>Invite Participants</h3>
+                <form id="invite-form">
+                    <input type="email" id="invite-email" required placeholder="colleague@email.com">
+                    <button type="submit" class="btn-secondary">Send Invitation Link</button>
+                </form>
+                <p id="invite-status" class="status-msg"></p>
+
+                <hr>
+
+                <h3>Syllabus & Files</h3>
+                <input type="file" id="syllabus-upload" accept=".pdf,.doc,.docx,.txt">
+                <ul id="file-list"></ul>
+            </section>
+
+            <!-- Right Panel: Video Stream & Shared Workspace Placeholder -->
+            <section class="panel video-panel">
+                <h3>Live Feed / Shared Screen</h3>
+                <div class="video-window">
+                    <video id="local-video" autoplay playsinline muted></video>
+                    <div id="video-placeholder">Video stream or shared screen (VS Code Window) will appear here</div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
